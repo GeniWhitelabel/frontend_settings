@@ -104,7 +104,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: geniwhitelabel/backend-service:${{ steps.branch-name.outputs.current_branch }}
+          tags: geniwhitelabel/edimu-pkl:${{ steps.branch-name.outputs.current_branch }}
 
   Deploy-to-testing:
     needs: creating-docker-image
@@ -127,10 +127,11 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
             cd /var/docker/${{ env.branch }}
-            docker pull geniwhitelabel/backend-service:${{ env.branch }}
+            docker pull geniwhitelabel/edimu-pkl:${{ env.branch }}
             docker compose down
             docker compose up -d
