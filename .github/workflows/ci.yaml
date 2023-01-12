@@ -126,10 +126,9 @@ jobs:
       - name: deploy to test domain only if branch on **_web_test
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: 34.101.109.192
+          username: lendyph
           key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
           port: 22
           script: |
             cd /var/docker/${{ env.branch }}
