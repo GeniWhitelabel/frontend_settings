@@ -21,6 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('warna', 'ApiController@warnaApi');
 
-Route::post('setting', 'ApiController@editApi');
+Route::post('/setting', 'ApiController@editApi');
 
 
