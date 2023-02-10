@@ -25,4 +25,6 @@ Route::get('/pengaturan', 'ApiController@settingApi');
 
 Route::post('/setting','SettingController@editApi');
 
+Route::put('/edit/{id}','SettingController@updateEdit');
+
 

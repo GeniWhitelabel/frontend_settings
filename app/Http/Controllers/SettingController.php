@@ -11,12 +11,16 @@ class SettingController extends Controller
     public function editApi(Request $request)
     {
         $pengaturan=new Setting();
-        $pengaturan->gambar_logo=$request->gambar_logo;
-        $pengaturan->gambar_icon=$request->gambar_icon;
-        $pengaturan->hint_text=$request->hint_text;
-        $pengaturan->text=$request->text;
-        $pengaturan->warna_logo=$request->warna_logo;
-        $pengaturan->warna_tombol=$request->warna_tombol;
+        $pengaturan->text_fitur1=$request->text_fitur1;
+        $pengaturan->text_fitur2=$request->text_fitur2;
+        $pengaturan->text_fitur3=$request->text_fitur3;
+        $pengaturan->text_fitur4=$request->text_fitur4;
+        $pengaturan->text_fitur5=$request->text_fitur5;
+        $pengaturan->text_fitur6=$request->text_fitur6;
+        $pengaturan->text_fitur7=$request->text_fitur7;
+        $pengaturan->text_fitur8=$request->text_fitur8;
+        $pengaturan->text_fitur9=$request->text_fitur9;
+        $pengaturan->warna_text=$request->warna_text;
         $pengaturan->warna_background=$request->warna_background;
 
         $pengaturan->save();
@@ -26,5 +30,27 @@ class SettingController extends Controller
             'data' => $pengaturan
         ],200);
         
+    }
+    public function updateEdit(Request $request, $id)
+    {
+        $pengaturan= Setting::find($id);
+        $pengaturan->text_fitur1=$request->text_fitur1;
+        $pengaturan->text_fitur2=$request->text_fitur2;
+        $pengaturan->text_fitur3=$request->text_fitur3;
+        $pengaturan->text_fitur4=$request->text_fitur4;
+        $pengaturan->text_fitur5=$request->text_fitur5;
+        $pengaturan->text_fitur6=$request->text_fitur6;
+        $pengaturan->text_fitur7=$request->text_fitur7;
+        $pengaturan->text_fitur8=$request->text_fitur8;
+        $pengaturan->text_fitur9=$request->text_fitur9;
+        $pengaturan->warna_text=$request->warna_text;
+        $pengaturan->warna_background=$request->warna_background;
+
+
+        $pengaturan->update();
+        return response([
+            'status' => 'success',
+            'data' => $pengaturan
+        ],200);
     }
 }

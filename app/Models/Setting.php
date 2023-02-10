@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     use HasFactory;
-    public $timestamps=false;
+    protected $table = 'setting';
+    protected $guarded = ['id'];
+    public $timestamps= false;
+    public $primaryKey=false;
 }
