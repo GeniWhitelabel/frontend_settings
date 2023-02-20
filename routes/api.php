@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('kodewarna', 'ApiController@warnaApi');
 
+// Route::get('dataikon', 'ApiController@ikonApi');
+
 Route::get('warna', 'ApiController@warnaBaru');
 
 Route::get('/pengaturan', 'ApiController@settingApi');
@@ -34,4 +36,6 @@ Route::post('/tambahwarna','SettingController@tambahWarna');
 
 Route::post('/ubahwarna/{id}','SettingController@updateWarna');
 
+// Route::post('/tambahicon','SettingController@tambahIkon');
 
+// Route::post('/ubahicon/{id}','SettingController@updateIkon');

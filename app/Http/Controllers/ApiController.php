@@ -38,4 +38,14 @@ class ApiController extends Controller
             'data' => $data
         ],200);
     }
+
+    // public function ikonApi(Request $request)
+    // {
+    //     $data = DB::table('asset_icon')
+    //         ->get();
+    //     return response([
+    //         'status' => 'ok',
+    //         'data' => $data
+    //     ],200);
+    // }
 }

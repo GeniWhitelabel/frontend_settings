@@ -57,4 +57,6 @@ RUN composer install -q --ignore-platform-reqs --no-ansi --no-interaction --no-s
 
 RUN a2enmod rewrite
 
+RUN php artisan route:cache
+
 RUN service apache2 restart

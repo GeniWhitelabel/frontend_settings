@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GantiWarna;
+use App\Models\Ikon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Setting;
@@ -70,7 +71,6 @@ class SettingController extends Controller
             'status' => 'success',
             'data' => $gantiwarna
         ],200);
-        
     }
 
     public function updateWarna(Request $request, $id){
@@ -87,4 +87,49 @@ class SettingController extends Controller
             'data' => $gantiwarna
         ],200);
     }
+
+    // public function tambahIkon(Request $request)
+    // {
+    //     $ikonedimu = new Ikon();
+        
+    //     $ikonedimu->icon1=$request->icon1;
+    //     $ikonedimu->icon2=$request->icon2;
+    //     $ikonedimu->icon3=$request->icon3;
+    //     $ikonedimu->icon4=$request->icon4;
+    //     $ikonedimu->icon5=$request->icon5;
+    //     $ikonedimu->icon6=$request->icon6;
+    //     $ikonedimu->icon7=$request->icon7;
+    //     $ikonedimu->icon8=$request->icon8;
+    //     $ikonedimu->icon9=$request->icon9;
+
+    //     $ikonedimu->save();
+        
+    //     return response([
+    //         'status' => 'success',
+    //         'data' => $ikonedimu
+    //     ],200);
+
+    // }
+
+    // public function updateIkon(Request $request, $id){
+    //     $ikonedimu = new Ikon();
+        
+    //     $ikonedimu->icon1=$request->icon1;
+    //     $ikonedimu->icon2=$request->icon2;
+    //     $ikonedimu->icon3=$request->icon3;
+    //     $ikonedimu->icon4=$request->icon4;
+    //     $ikonedimu->icon5=$request->icon5;
+    //     $ikonedimu->icon6=$request->icon6;
+    //     $ikonedimu->icon7=$request->icon7;
+    //     $ikonedimu->icon8=$request->icon8;
+    //     $ikonedimu->icon9=$request->icon9;
+
+    //     $ikonedimu->save();
+        
+    //     return response([
+    //         'status' => 'success',
+    //         'data' => $ikonedimu
+    //     ],200);
+    // }
+
 }
