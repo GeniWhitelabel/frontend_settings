@@ -29,7 +29,7 @@ class ApiController extends Controller
         ],200);
     }
 
-    public function warnaDb(Request $request)
+    public function warnaBaru(Request $request)
     {
         $data = DB::table('setting_warna')
             ->get();

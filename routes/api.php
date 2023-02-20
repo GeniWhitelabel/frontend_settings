@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('kodewarna', 'ApiController@warnaApi');
 
-Route::get('warna', 'ApiController@warnaDb');
+Route::get('warna', 'ApiController@warnaBaru');
 
 Route::get('/pengaturan', 'ApiController@settingApi');
 
