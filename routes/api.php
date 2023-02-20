@@ -19,12 +19,19 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('warna', 'ApiController@warnaApi');
+Route::get('kodewarna', 'ApiController@warnaApi');
+
+Route::get('warna', 'ApiController@warnaDb');
 
 Route::get('/pengaturan', 'ApiController@settingApi');
 
+
 Route::post('/setting','SettingController@editApi');
 
-Route::put('/edit/{id}','SettingController@updateEdit');
+Route::post('/edit/{id}','SettingController@updateEdit');
+
+Route::post('/tambahwarna','SettingController@tambahWarna');
+
+Route::post('/ubahwarna/{id}','SettingController@updateWarna');
 
 

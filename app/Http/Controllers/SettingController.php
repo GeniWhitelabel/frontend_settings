@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GantiWarna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Setting;
@@ -48,9 +49,42 @@ class SettingController extends Controller
 
 
         $pengaturan->update();
+        
         return response([
             'status' => 'success',
             'data' => $pengaturan
+        ],200);
+    }
+
+    public function tambahWarna(Request $request)
+    {
+        $gantiwarna = new GantiWarna();
+        
+        $gantiwarna->warnaAppbar=$request->warnaAppbar;
+        $gantiwarna->warnaTeks=$request->warnaTeks;
+        $gantiwarna->warnaBackground=$request->warnaBackground;
+
+        $gantiwarna->save();
+        
+        return response([
+            'status' => 'success',
+            'data' => $gantiwarna
+        ],200);
+        
+    }
+
+    public function updateWarna(Request $request, $id){
+        $gantiwarna = GantiWarna::find($id);
+        
+        $gantiwarna->warnaAppbar=$request->warnaAppbar;
+        $gantiwarna->warnaTeks=$request->warnaTeks;
+        $gantiwarna->warnaBackground=$request->warnaBackground;
+
+        $gantiwarna->update();
+        
+        return response([
+            'status' => 'success',
+            'data' => $gantiwarna
         ],200);
     }
 }

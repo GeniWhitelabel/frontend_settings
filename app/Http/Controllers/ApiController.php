@@ -29,4 +29,13 @@ class ApiController extends Controller
         ],200);
     }
 
+    public function warnaDb(Request $request)
+    {
+        $data = DB::table('setting_warna')
+            ->get();
+        return response([
+            'status' => 'ok',
+            'data' => $data
+        ],200);
+    }
 }
