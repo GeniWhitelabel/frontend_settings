@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asset;
 use App\Models\GantiWarna;
 use App\Models\Ikon;
 use Illuminate\Http\Request;
@@ -22,8 +23,10 @@ class SettingController extends Controller
         $pengaturan->text_fitur7=$request->text_fitur7;
         $pengaturan->text_fitur8=$request->text_fitur8;
         $pengaturan->text_fitur9=$request->text_fitur9;
-        $pengaturan->warna_text=$request->warna_text;
-        $pengaturan->warna_background=$request->warna_background;
+        $pengaturan->navbar_1=$request->navbar_1;
+        $pengaturan->navbar_2=$request->navbar_2;
+        $pengaturan->navbar_3=$request->navbar_3;
+        $pengaturan->navbar_4=$request->navbar_4;
 
         $pengaturan->save();
         
@@ -45,8 +48,10 @@ class SettingController extends Controller
         $pengaturan->text_fitur7=$request->text_fitur7;
         $pengaturan->text_fitur8=$request->text_fitur8;
         $pengaturan->text_fitur9=$request->text_fitur9;
-        $pengaturan->warna_text=$request->warna_text;
-        $pengaturan->warna_background=$request->warna_background;
+        $pengaturan->navbar_1=$request->navbar_1;
+        $pengaturan->navbar_2=$request->navbar_2;
+        $pengaturan->navbar_3=$request->navbar_3;
+        $pengaturan->navbar_4=$request->navbar_4;
 
 
         $pengaturan->update();
@@ -56,7 +61,6 @@ class SettingController extends Controller
             'data' => $pengaturan
         ],200);
     }
-
     public function tambahWarna(Request $request)
     {
         $gantiwarna = new GantiWarna();
@@ -72,7 +76,6 @@ class SettingController extends Controller
             'data' => $gantiwarna
         ],200);
     }
-
     public function updateWarna(Request $request, $id){
         $gantiwarna = GantiWarna::find($id);
         
@@ -90,7 +93,7 @@ class SettingController extends Controller
 
     // public function tambahIkon(Request $request)
     // {
-    //     $ikonedimu = new Ikon();
+    //     $ikonedimu = new Asset();
         
     //     $ikonedimu->icon1=$request->icon1;
     //     $ikonedimu->icon2=$request->icon2;
@@ -112,7 +115,7 @@ class SettingController extends Controller
     // }
 
     // public function updateIkon(Request $request, $id){
-    //     $ikonedimu = new Ikon();
+    //     $ikonedimu = new Asset();
         
     //     $ikonedimu->icon1=$request->icon1;
     //     $ikonedimu->icon2=$request->icon2;
@@ -124,7 +127,7 @@ class SettingController extends Controller
     //     $ikonedimu->icon8=$request->icon8;
     //     $ikonedimu->icon9=$request->icon9;
 
-    //     $ikonedimu->save();
+    //     $ikonedimu->update();
         
     //     return response([
     //         'status' => 'success',

@@ -18,7 +18,6 @@ class ApiController extends Controller
             'data' => $data
         ],200);
     }
-
     public function settingApi(Request $request)
     {
         $db = DB::table('settings')
@@ -28,7 +27,6 @@ class ApiController extends Controller
             'data' => $db
         ],200);
     }
-
     public function warnaBaru(Request $request)
     {
         $data = DB::table('setting_warna')
@@ -39,13 +37,4 @@ class ApiController extends Controller
         ],200);
     }
 
-    // public function ikonApi(Request $request)
-    // {
-    //     $data = DB::table('asset_icon')
-    //         ->get();
-    //     return response([
-    //         'status' => 'ok',
-    //         'data' => $data
-    //     ],200);
-    // }
 }
