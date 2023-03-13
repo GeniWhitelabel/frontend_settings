@@ -45,9 +45,9 @@ jobs:
           php-version: 8.1
           extensions: mbstring, ctype, pdo_mysql, fileinfo, openssl, bcmath, json, tokenizer, xml
 
-      # Runs a set of commands using the runners shell
-      # - name: Copy .env file
-      #   run: cp .env.example .env
+      #Runs a set of commands using the runners shell
+      - name: Copy .env file
+        run: cp .env.example .env
 
       - name: Install dependencies with Composer
         run: composer install --prefer-dist
