@@ -26,13 +26,13 @@ Route::get('warna', 'ApiController@warnaBaru');
 Route::get('/pengaturan', 'ApiController@settingApi');
 
 
-Route::post('/tambahsetting','SettingController@editApi');
+Route::post('/tambahsetting', 'SettingController@editApi');
 
-Route::post('/ubahsetting/{id}','SettingController@updateEdit');
+Route::post('/ubahsetting/{id}', 'SettingController@updateEdit');
 
-Route::post('/tambahwarna','SettingController@tambahWarna');
+Route::post('/tambahwarna', 'SettingController@tambahWarna');
 
-Route::post('/ubahwarna/{id}','SettingController@updateWarna');
+Route::post('/ubahwarna/{id}', 'SettingController@updateWarna');
 
 // Route::post('/tambahicon','SettingController@tambahIkon');
 

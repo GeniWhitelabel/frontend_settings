@@ -126,12 +126,12 @@ jobs:
       - name: deploy to test domain only if branch on **_web_test
         uses: appleboy/ssh-action@master
         with:
-          host: 34.101.109.192
-          username: lendyph
-          key: ${{ secrets.SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.SSH_PASSPHRASE }}
           port: 22
           script: |
-            cd /var/docker/${{ env.branch }}
+            cd /var/docker/service/${{ env.branch }}
             docker pull geniwhitelabel/edimu-pkl:${{ env.branch }}
             docker compose down
             docker compose up -d
