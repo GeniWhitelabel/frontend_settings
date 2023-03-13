@@ -10,6 +10,6 @@ class GantiWarna extends Model
     use HasFactory;
     protected $table = 'setting_warna';
     protected $guarded = ['id'];
-    public $timestamps= false;
-    public $primaryKey='id';
+    public $timestamps = false;
+    public $primaryKey = 'id';
 }

@@ -16,7 +16,7 @@ class ApiController extends Controller
         return response([
             'status' => 'ok',
             'data' => $data
-        ],200);
+        ], 200);
     }
     public function settingApi(Request $request)
     {
@@ -25,7 +25,16 @@ class ApiController extends Controller
         return response([
             'status' => 'ok',
             'data' => $db
-        ],200);
+        ], 200);
+    }
+    public function setbaruApi(Request $request)
+    {
+        $db = DB::table('setbaru')
+            ->get();
+        return response([
+            'status' => 'ok',
+            'data' => $db
+        ], 200);
     }
     public function warnaBaru(Request $request)
     {
@@ -34,7 +43,6 @@ class ApiController extends Controller
         return response([
             'status' => 'ok',
             'data' => $data
-        ],200);
+        ], 200);
     }
-
 }

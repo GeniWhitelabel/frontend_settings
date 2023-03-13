@@ -25,6 +25,8 @@ Route::get('warna', 'ApiController@warnaBaru');
 
 Route::get('/pengaturan', 'ApiController@settingApi');
 
+Route::get('/setbaru', 'ApiController@setbaruApi');
+
 
 Route::post('/tambahsetting', 'SettingController@editApi');
 
