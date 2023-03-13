@@ -131,7 +131,7 @@ jobs:
           password: ${{ secrets.SSH_PASSPHRASE }}
           port: 22
           script: |
-            cd /var/docker/service/${{ env.branch }}
+            cd /var/docker/services/${{ env.branch }}
             docker pull geniwhitelabel/edimu-pkl:${{ env.branch }}
             docker compose down
             docker compose up -d
